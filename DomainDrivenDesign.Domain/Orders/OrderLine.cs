@@ -11,10 +11,9 @@ namespace DomainDrivenDesign.Domain.Orders
 {
     public sealed class OrderLine : BaseEntity
     {
-        public OrderLine(Guid id, Guid orderId, Guid productId, Product product, int quantity, Money price) : base(id)
+        public OrderLine(Guid id, Guid orderId, Guid productId, int quantity, Money price) : base(id)
         {
             ProductId = productId;
-            Product = product;
             Quantity = quantity;
             Price = price;
         }
