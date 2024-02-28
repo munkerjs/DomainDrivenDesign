@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DomainDrivenDesign.Domain.Abstractions
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntity : IEquatable<BaseEntity>
     {
         public Guid Id { get; init; }
         public BaseEntity(Guid id)
@@ -14,7 +14,7 @@ namespace DomainDrivenDesign.Domain.Abstractions
             Id = id;
         }
 
-        public override bool Equals(object? obj)
+        public override bool Equals(object? obj) 
         {
             if (obj == null)
             {
@@ -27,6 +27,31 @@ namespace DomainDrivenDesign.Domain.Abstractions
             }
 
             if(obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return base.Equals(Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+
+        public bool Equals(BaseEntity? other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+
+            if (other is not BaseEntity entity)
+            {
+                return false;
+            }
+
+            if (other.GetType() != GetType())
             {
                 return false;
             }

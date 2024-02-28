@@ -1,13 +1,12 @@
 ﻿
-Guid id = Guid.NewGuid();
-A a1 = new A(id);
-A a2 = new A(id);
+using BenchmarkDotNet.Running;
+using DomainDrivenDesign.ConsoleApp;
 
-Console.WriteLine(a1.Equals(a2));
+BenchmarkRunner.Run<BenchmarkService>();
 Console.ReadLine();
 
 
-public abstract class BaseEntity
+public abstract class BaseEntity : IEquatable<BaseEntity>
 {
     public Guid Id { get; init; }
     public BaseEntity(Guid id)
@@ -28,6 +27,31 @@ public abstract class BaseEntity
         }
 
         if (obj.GetType() != GetType())
+        {
+            return false;
+        }
+
+        return entity.Id == Id;
+    }
+
+    public override int GetHashCode()
+    {
+        return Id.GetHashCode();
+    }
+
+    public bool Equals(BaseEntity? other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+
+        if (other is not BaseEntity entity)
+        {
+            return false;
+        }
+
+        if (other.GetType() != GetType())
         {
             return false;
         }
