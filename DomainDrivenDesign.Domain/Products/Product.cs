@@ -1,5 +1,6 @@
 ﻿using DomainDrivenDesign.Domain.Abstractions;
 using DomainDrivenDesign.Domain.Categories;
+using DomainDrivenDesign.Domain.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,30 @@ namespace DomainDrivenDesign.Domain.Products
 {
     public sealed class Product : BaseEntity
     {
-        public Product(Guid id) : base(id)
+        public Product(Guid id, Name name, string description, int stockQuantity, Money price, Guid categoryId, Category category) : base(id)
         {
+            Name = name;
+            Description = description;
+            StockQuantity = stockQuantity;
+            Price = price;
+            CategoryId = categoryId;
+            Category = category;
         }
 
-        public string Name { get; set; }    
-        public string Description { get; set; }
-        public int StockQuantity { get; set; }
-        public decimal Price { get; set; }
-        public string Currency { get; set; }
-        public Guid CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Name Name { get; private set; }    
+        public string Description { get; private set; }
+        public int StockQuantity { get; private set; }
+        public Money Price { get; private set; }
+        public Guid CategoryId { get; private set; }
+        public Category Category { get; private set; }
+
+        public void ChangeName(string name) => Name = new(name);
+        public void Update(string name,int stockQuantity, decimal amount, string currency, Guid categoryId)
+        {
+            Name = new(name);
+            StockQuantity = stockQuantity;
+            Price = new(amount, Currency.FromCode(currency));
+            CategoryId = categoryId;
+        }
     }
 }

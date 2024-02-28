@@ -1,5 +1,6 @@
 ﻿using DomainDrivenDesign.Domain.Abstractions;
 using DomainDrivenDesign.Domain.Products;
+using DomainDrivenDesign.Domain.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,14 @@ namespace DomainDrivenDesign.Domain.Categories
 {
     public sealed class Category : BaseEntity
     {
-        public Category(Guid id) : base(id)
+        public Category(Guid Id, Name name) : base(Id)
         {
+            Name = name;
         }
 
-        public string Name { get; set; }
+        public Name Name { get; private set; }
         public ICollection<Product> Products { get; set; }
+
+        public void ChangeName(string name) => Name = new(name);
     }
 }
