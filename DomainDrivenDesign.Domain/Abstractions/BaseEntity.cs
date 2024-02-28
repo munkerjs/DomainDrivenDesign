@@ -13,5 +13,25 @@ namespace DomainDrivenDesign.Domain.Abstractions
         {
             Id = id;
         }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            if (obj is not BaseEntity entity)
+            {
+                return false;
+            }
+
+            if(obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return base.Equals(Id);
+        }
     }
 }
