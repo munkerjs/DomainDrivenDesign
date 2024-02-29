@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DomainDrivenDesign.Domain.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace DomainDrivenDesign.Application
         {
             services.AddMediatR(cfr =>
             {
-                cfr.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                cfr.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly(), typeof(BaseEntity).Assembly);
             });
             return services;
         }

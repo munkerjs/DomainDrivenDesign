@@ -11,6 +11,7 @@ namespace DomainDrivenDesign.Domain.Categories
 {
     public sealed class Category : BaseEntity
     {
+        private Category(Guid id) : base(id) { } // add-migration yaparken hata atmaması için
         public Category(Guid Id, Name name) : base(Id)
         {
             Name = name;

@@ -24,7 +24,7 @@ namespace DomainDrivenDesign.Application.Features.Products.CreateProduct
                 request.Currency,
                 request.CategoryId);
 
-            await _unitOfWork.SaveChangeAsync(cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
     }
 }

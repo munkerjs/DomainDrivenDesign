@@ -11,6 +11,7 @@ namespace DomainDrivenDesign.Domain.Products
 {
     public sealed class Product : BaseEntity
     {
+        private Product(Guid id) : base(id) { }  // add-migration yaparken hata atmaması için
         public Product(Guid id, Name name, int stockQuantity, Money price, Guid categoryId) : base(id)
         {
             Name = name;

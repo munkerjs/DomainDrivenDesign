@@ -21,7 +21,7 @@ namespace DomainDrivenDesign.Application.Features.Orders.CreateOrder
         public async Task Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
             var order = await _orderRepository.CreateAsync(request.CreateOrderDtos, cancellationToken);
-            await _unitOfWork.SaveChangeAsync(cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             await _mediator.Publish(new OrderDomainEvent(order)); // görevleri tetikleyelim.
         }

@@ -10,6 +10,7 @@ namespace DomainDrivenDesign.Domain.Orders
 {
     public sealed partial class Order : BaseEntity
     {
+        private Order(Guid id) : base(id) { }  // add-migration yaparken hata atmaması için
         public Order(Guid id, string orderNumber, DateTime createdAt, OrderStatusEnum status) : base(id)
         {
             OrderNumber = orderNumber;

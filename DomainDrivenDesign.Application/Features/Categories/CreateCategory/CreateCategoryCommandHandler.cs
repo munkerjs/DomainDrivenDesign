@@ -18,7 +18,7 @@ namespace DomainDrivenDesign.Application.Features.Categories.CreateCategory
         public async Task Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
             await _categoryRepository.CreateAsync(request.name, cancellationToken);
-            await _unitOfWork.SaveChangeAsync(cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
     }
 }

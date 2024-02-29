@@ -11,6 +11,7 @@ namespace DomainDrivenDesign.Domain.Orders
 {
     public sealed class OrderLine : BaseEntity
     {
+        private OrderLine(Guid id) : base(id) { } // add-migration yaparken hata atmaması için
         public OrderLine(Guid id, Guid orderId, Guid productId, int quantity, Money price) : base(id)
         {
             ProductId = productId;

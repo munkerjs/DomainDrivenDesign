@@ -8,6 +8,6 @@ namespace DomainDrivenDesign.Domain.Abstractions
 {
     public interface IUnitOfWork
     {
-        Task<int> SaveChangeAsync(CancellationToken cancellationToken = default);
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

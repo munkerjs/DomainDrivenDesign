@@ -13,6 +13,8 @@ namespace DomainDrivenDesign.Domain.Users
     public sealed class User : BaseEntity
     {
         private readonly IMediator _mediator;
+
+        private User(Guid id) : base(id) { }  // add-migration yaparken hata atmaması için
         private User(Guid Id, Name name, Email email, Password password, Address address) : base(Id)
         {
             Name = name;

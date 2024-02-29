@@ -33,7 +33,7 @@ namespace DomainDrivenDesign.Application.Features.Users.CreateUser
                 request.PostalCode
             );
 
-            await _unitOfWork.SaveChangeAsync(cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             await _mediator.Publish(new UserDomainEvent(user)); // görevleri tetikleyelim.
         }
     }
