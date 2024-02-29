@@ -34,7 +34,7 @@ namespace DomainDrivenDesign.Infrastructure.Repositories
 
         public async Task<List<Order>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            return await _context.Orders.ToListAsync(cancellationToken);
+            return await _context.Orders.Include(x => x.OrderLines).ThenInclude(x=> x.Product).ToListAsync(cancellationToken);
         }
     }
 }
