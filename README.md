@@ -1,8 +1,8 @@
 # Domain Driven Desgin(DDD)
 
-Büyük çaplı projelerde geliştirilebilir bir altyapı için tercih edilen Domain Driven Design tasarım kalıbını öğrenmek ve iyi anlamak için oluşturulmuş 4 Aggragate'den oluşan örnek projedir.
+Büyük çaplı projelerde geliştirilebilir bir altyapı için tercih edilen Domain Driven Design tasarım kalıbını öğrenmek ve iyi anlamak için oluşturulmuş 4 Aggregate'den oluşan örnek projedir.
 
-# Aggragate Listesi
+# Aggregate Listesi
 #### 1. Product
 #### 2. User
 #### 3. Category
