@@ -11,17 +11,16 @@ namespace DomainDrivenDesign.Domain.Products
 {
     public sealed class Product : BaseEntity
     {
-        public Product(Guid id, Name name, string description, int stockQuantity, Money price, Guid categoryId) : base(id)
+        public Product(Guid id, Name name, int stockQuantity, Money price, Guid categoryId) : base(id)
         {
             Name = name;
-            Description = description;
             StockQuantity = stockQuantity;
             Price = price;
             CategoryId = categoryId;
         }
 
         public Name Name { get; private set; }    
-        public string Description { get; private set; }
+        // public string Description { get; private set; }
         public int StockQuantity { get; private set; }
         public Money Price { get; private set; }
         public Guid CategoryId { get; private set; }

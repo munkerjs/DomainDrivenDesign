@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainDrivenDesign.ConsoleA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainDrivenDesign.Application", "DomainDrivenDesign.Application\DomainDrivenDesign.Application.csproj", "{0377CB17-7F1B-4BF9-A552-A84679170A3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainDrivenDesign.Infrastructure", "DomainDrivenDesign.Infrastructure\DomainDrivenDesign.Infrastructure.csproj", "{C5263ECC-7F55-4C5A-859A-25101CEA0FA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0377CB17-7F1B-4BF9-A552-A84679170A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0377CB17-7F1B-4BF9-A552-A84679170A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0377CB17-7F1B-4BF9-A552-A84679170A3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5263ECC-7F55-4C5A-859A-25101CEA0FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5263ECC-7F55-4C5A-859A-25101CEA0FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5263ECC-7F55-4C5A-859A-25101CEA0FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5263ECC-7F55-4C5A-859A-25101CEA0FA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

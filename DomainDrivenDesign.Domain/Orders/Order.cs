@@ -20,7 +20,7 @@ namespace DomainDrivenDesign.Domain.Orders
         public string OrderNumber { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public OrderStatusEnum Status { get; private set; }
-        public ICollection<OrderLine> OrderLines { get; private set; }
+        public ICollection<OrderLine> OrderLines { get; private set; } = new List<OrderLine>();
 
         public void CreateOrder (List<CreateOrderDto> CreateOrderDtos)
         {
