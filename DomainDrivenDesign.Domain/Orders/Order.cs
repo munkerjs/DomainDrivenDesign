@@ -53,13 +53,6 @@ namespace DomainDrivenDesign.Domain.Orders
 
             OrderLines.Remove(orderline);
         }
-
-        /* Aggrigate ve AggrigateRoute nedir?
-         * Aggrigate, genellikle bir yapının çatı elemanıdır. Buna örnek olarak Product, Order, Category gibi temel şablonlar ele alınır. Şablon altındaki tüm herşey ise AggrigateRoute olarak isimlendirilir.
-         * Orders -> Aggrigate
-         * -> Order -> AggrigateRoute
-         * -> OrderLine -> AggrigateRoute
-         */
     }
 }
 
