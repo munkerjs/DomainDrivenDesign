@@ -12,7 +12,7 @@ namespace DomainDrivenDesign.Infrastructure.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-KEM5IF3;Database=DomainDrivenDesign;User Id=sa;Password=040418;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-KEM5IF3;Database=DomainDrivenDesign;User Id=sa;Password=123456;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
         public DbSet<User> Users { get; set; }
